@@ -1,29 +1,19 @@
-import NavApp from "../src/NAV/NavApp";
-import "./Styles/IndexApp.css";
+import HeaderApp from "./Header/HeaderApp"; //npm start en terminal para ejecutar el proyecto
+import FooterApp from "./Footer/FooterApp";
+import "./Styles/styles.css";
 import { Outlet } from "react-router-dom";
 
+const IndexApp = () => {
+  return (
+    <div className="body-style">
+      <HeaderApp />
 
+      {/* Aquí se renderiza el contenido de cada página */}
+      <Outlet />
 
-
-const IndexApp =()=>{  //este es un tipo  de  funcion  flecha
-
-    const user ="Andres"
-
-    return(
-
-        <>
-
-        <NavApp/>
-
-
-        <h1 className="saludo">Hola  mundo, bienvenido {user}</h1>
-        <Outlet />
-
-        <section></section>
-
-        <div></div>
-        </>
-    )
-}
+      <FooterApp />
+    </div>
+  );
+};
 
 export default IndexApp;

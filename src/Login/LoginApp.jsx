@@ -1,56 +1,32 @@
-
-import React, { useState } from "react";
+import "../Styles/styles.css";
+import { Link } from "react-router-dom";
 
 const LoginApp = () => {
-    // Estados para guardar los valores de los inputs
-const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    });
+  return (
+    <section className="login-section">
+      <h2 className="login-title">Iniciar Sesión</h2>
+      <p className="login-description">
+        Accede a tu cuenta para comprar, gestionar servicios y más.
+      </p>
 
-    //manejador  de  los  cambios en las entradas
+      <form className="login-form">
+        <label htmlFor="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
 
-    const handleChange=(evento)=>{
-        const {name,value}=evento.target;
-        setFormData({
-            ...formData,
-            [name]:value,
-        });
-    };
+        <label htmlFor="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required />
 
-    //manejador  del  envio  del formulario
-    const handleSubmit=(evento)=>{
-        evento.preventDefault(); //evita  el  refresh  de  la  pagina
-        console.log("Datos del formulario:");
-        console.log("Email:", formData.email);
-        console.log("Contraseña:", formData.password);
-        alert(`Bienvenido ${formData.email}`);
-    };
+        <button type="submit" className="btn-iniciar login">
+          Iniciar Sesión
+        </button>
 
-return (
-    <>
-    <div>
-      <h1>Iniciar Sesión</h1>
-      <form className="email-form" onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input type="email" name="email" required 
-          onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          Contraseña:
-          <input type="password" name="password" required 
-          onChange={handleChange}
-          />
-        </label>
-        <br />
-        <button type="submit">Iniciar Sesión</button>
+        <p className="login-extra">
+          ¿No tienes una cuenta?{" "}
+          <Link to="/registro">Regístrate aquí</Link>.
+        </p>
       </form>
-    </div>
-    </>
+    </section>
   );
+}
 
-};
-export default LoginApp;
+export default LoginApp

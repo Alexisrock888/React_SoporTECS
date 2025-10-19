@@ -1,0 +1,569 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  body.body-style {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #002b5c;
+    color: white;
+    padding: 7px 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1000;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }  
+  
+.header-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+  
+  .navbar {
+    text-align: center;
+    margin-top: 1px;
+  }
+  
+  .nav-list {
+    display: inline-block;
+    list-style: none;
+  }
+  
+  .nav-list li {
+    display: inline-block;
+    margin: 0 20px;
+  }
+  
+  .nav-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: white; /* ← blanco para que se vea sobre fondo azul */
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    z-index: 20;
+  }
+  
+  /* Estilos responsive para móviles */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #002b5c;
+        width: 100%;
+        padding: 15px 0;
+        position: absolute;
+        top: 100%; /* justo debajo del header */
+        left: 0;
+        z-index: 999;
+      }
+  
+      .nav-list.show {
+        display: flex;
+      }
+  
+      .nav-list li {
+        margin: 10px 0;
+      }
+  }
+  
+  main {
+    flex: 1;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .intro-section {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  footer {
+    background-color: #002b5c;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    margin-top: auto;
+  }
+  .store-section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .store-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #002b5c;
+  }
+  
+  .store-description {
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .product-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .product-card h3 {
+    margin-bottom: 10px;
+    color: #002b5c;
+  }
+  
+  .btn-comprar {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #002b5c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-comprar:hover {
+    background-color: #004a99;
+  }
+  .solutions-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .solutions-title {
+    font-size: 2.2rem;
+    color: #002b5c;
+    margin-bottom: 10px;
+  }
+  
+  .solutions-description {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .solution-card {
+    background-color: #ffffff;
+    border: 1px solid #cce;
+    border-left: 5px solid #002b5c;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .solution-card h3 {
+    margin-bottom: 10px;
+    color: #002b5c;
+  }
+  
+  .solution-card p {
+    margin-bottom: 15px;
+    color: #444;
+  }
+  
+  .btn-ver {
+    background-color: #002b5c;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-ver:hover {
+    background-color: #004494;
+  }
+/* =====================================================
+   MARKETPLACE DE TÉCNICOS
+===================================================== */
+.marketplace-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.marketplace-title {
+  font-size: 2.2rem;
+  color: #002b5c;
+  margin-bottom: 8px;
+}
+
+.marketplace-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.tech-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tech-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.tech-card h3 {
+  font-size: 1.2rem;
+  color: #002b5c;
+  margin-bottom: 6px;
+}
+
+.tech-prof {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.tech-email {
+  font-size: 0.9rem;
+  color: #555;
+  word-break: break-all;
+}
+.btn-circular {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #002b5c;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.btn-circular:hover {
+  background-color: #004494;
+}
+
+/* =====================================================
+   singin
+===================================================== */
+.login-section {
+  padding: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #ffffffcc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.login-description {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-form label {
+  font-weight: bold;
+}
+
+.login-form input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-iniciar {
+  padding: 0.8rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-iniciar:hover {
+  background-color: #0056b3;
+}
+
+.login-extra {
+  text-align: center;
+  margin-top: 1rem;
+}
+/* Registro */
+.btn-iniciar {
+  padding: 0.8rem;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Botón de inicio de sesión */
+.btn-iniciar.login {
+  background-color: #007bff;
+}
+
+.btn-iniciar.login:hover {
+  background-color: #0056b3;
+}
+
+/* Botón de registro */
+.btn-iniciar.register {
+  background-color: #28a745;
+}
+
+.btn-iniciar.register:hover {
+  background-color: #218838;
+}
+/* Perfil */
+.perfil-section {
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #ffffffcc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.perfil-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.perfil-info {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.perfil-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.perfil-actions .btn-iniciar {
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.perfil-actions .login {
+  background-color: #007bff;
+}
+
+.perfil-actions .login:hover {
+  background-color: #0056b3;
+}
+
+.perfil-actions .register {
+  background-color: #28a745;
+}
+
+.perfil-actions .register:hover {
+  background-color: #218838;
+}
+
+/* =====================================================
+   Idioma
+===================================================== */
+.idioma-dropdown select {
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  background-color: white;
+  color: #333;
+}
+/* Estilo para el enlace en estado hover */
+.nav-list a:hover {
+  color: #ffcc00; /* Color dorado al pasar el mouse sobre el enlace */
+  text-decoration: none; /* Opcional: elimina el subrayado */
+}
+
+/* Estilo para el enlace en estado activo */
+.nav-link.activo {
+  color: gold; /* Color dorado cuando el enlace está activo */
+  font-weight: bold; /* Texto en negrita cuando el enlace está activo */
+}
+
+/* Estilo para mantener el color dorado incluso después de hacer clic, si es necesario */
+.nav-list a:active {
+  color: #ffcc00; /* El color dorado al hacer clic */
+}
+/* Contenedor del botón de perfil */
+.profile-item {
+  position: relative;
+  list-style: none;
+}
+
+/* Estilo del desplegable */
+.profile-menu {
+  position: relative;
+}
+
+#profile-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-family: inherit;
+}
+
+#profile-btn:hover,
+#profile-btn:focus {
+  color: #ffcc00;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #222;
+  padding: 0.5rem;
+  border-radius: 8px;
+  right: 0;
+  top: 100%;
+  z-index: 1000;
+}
+
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #333;
+  color: #ffcc00;
+}
+.dropdown-menu.show {
+  display: block;
+}
+
+/* Asegura que el body ocupe toda la altura de la ventana */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Convierte el body en un contenedor flex en columna */
+.body-style {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* El contenido principal debe expandirse para empujar el footer abajo */
+#main {
+  flex: 1;
+}
+/* Estilo para el botón de PERFIL */
+#profile-btn i {
+  font-size: 1.1rem;
+  margin: 0 2px;
+}
+
+.profile-menu .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.intro-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+}
