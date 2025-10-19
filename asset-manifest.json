@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React_SoporTECS/static/css/main.0375974e.css",
+    "main.js": "/React_SoporTECS/static/js/main.c59a1ed0.js",
+    "index.html": "/React_SoporTECS/index.html",
+    "main.0375974e.css.map": "/React_SoporTECS/static/css/main.0375974e.css.map",
+    "main.c59a1ed0.js.map": "/React_SoporTECS/static/js/main.c59a1ed0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0375974e.css",
+    "static/js/main.c59a1ed0.js"
+  ]
+}
