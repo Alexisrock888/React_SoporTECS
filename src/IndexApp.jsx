@@ -7,9 +7,9 @@ import "./Styles/styles.css";
 // npm start → ejecuta el proyecto en local (modo desarrollo).
 // npm run build → npm run deploy -compila y despliega el proyecto en GitHub Pages.
 // Luego, para guardar y subir cambios al repositorio:
-// 1️⃣ Clic en el ícono “+” (para agregar los archivos modificados)
-// 2️⃣ Escribir un comentario de confirmación
-// 3️⃣ Presionar Ctrl + Enter para confirmar y subir los cambios.
+// 1️.Clic en el ícono “+” (para agregar los archivos modificados)
+// 2.Escribir un comentario de confirmación
+// 3️.Presionar Ctrl + Enter para confirmar y subir los cambios.
 
 const IndexApp = () => {
   return (
