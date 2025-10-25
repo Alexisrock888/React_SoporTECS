@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/React_SoporTECS/static/css/main.4edf26b7.css",
-    "main.js": "/React_SoporTECS/static/js/main.d4a0721f.js",
+    "main.css": "/React_SoporTECS/static/css/main.2ba32d20.css",
+    "main.js": "/React_SoporTECS/static/js/main.5b7b024e.js",
     "index.html": "/React_SoporTECS/index.html",
-    "main.4edf26b7.css.map": "/React_SoporTECS/static/css/main.4edf26b7.css.map",
-    "main.d4a0721f.js.map": "/React_SoporTECS/static/js/main.d4a0721f.js.map"
+    "main.2ba32d20.css.map": "/React_SoporTECS/static/css/main.2ba32d20.css.map",
+    "main.5b7b024e.js.map": "/React_SoporTECS/static/js/main.5b7b024e.js.map"
   },
   "entrypoints": [
-    "static/css/main.4edf26b7.css",
-    "static/js/main.d4a0721f.js"
+    "static/css/main.2ba32d20.css",
+    "static/js/main.5b7b024e.js"
   ]
 }
