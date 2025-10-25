@@ -1,18 +1,21 @@
-import HeaderApp from "./Header/HeaderApp"; //npm start en terminal para ejecutar el proyecto.
-import FooterApp from "./Footer/FooterApp"; //npm run deploy para desplegar el proyecto.
-import "./Styles/styles.css";               //luego para guardar cambios en la rama  damos en el mas para subir los cambios agregamos comentari y damos un ctyl enter, carga y confirmar.
+import React from "react";
 import { Outlet } from "react-router-dom";
+import HeaderApp from "./Header/HeaderApp";
+import FooterApp from "./Footer/FooterApp";
+import "./Styles/styles.css";
 
 const IndexApp = () => {
   return (
-    <div className="body-style">
+    <>
       <HeaderApp />
 
-      {/* Aquí se renderiza el contenido de cada página */}
-      <Outlet />
+      {/* Contenedor principal para renderizar las páginas */}
+      <main className="main-container">
+        <Outlet />
+      </main>
 
       <FooterApp />
-    </div>
+    </>
   );
 };
 
