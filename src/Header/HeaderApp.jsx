@@ -46,42 +46,34 @@ const HeaderApp = () => {
 <nav className="navbar">
   <ul id="nav-list" className={`nav-list ${menuOpen ? "show" : ""}`}>
     <li>
-      <Link to="/" className="nav-link activo">
-        Inicio
-      </Link>
+      <Link to="/" className="nav-link activo">Inicio</Link>
     </li>
     <li>
-      <Link to="/tienda" className="nav-link">
-        Tienda de Software
-      </Link>
+      <Link to="/tienda" className="nav-link">Tienda de Software</Link>
     </li>
     <li>
-      <Link to="/soluciones" className="nav-link">
-        Centro de Soluciones
-      </Link>
+      <Link to="/soluciones" className="nav-link">Centro de Soluciones</Link>
     </li>
     <li>
-      <Link to="/marketplace" className="nav-link">
-        Marketplace de Técnicos
-      </Link>
+      <Link to="/marketplace" className="nav-link">Marketplace de Técnicos</Link>
     </li>
 
-          {/* Menú perfil */}
-          <li className="nav-item profile-menu">
-            <button
-              id="profile-btn"
-              className="nav-link"
-              title="Perfil"
-              onClick={toggleProfile}
-            >
-              <i className="fas fa-user"></i> <i className="fas fa-caret-down"></i>
-            </button>
-            <ul
-              id="profile-dropdown"
-              className={`dropdown-menu ${profileOpen ? "show" : ""}`}
-            >
-<li><Link to="/login">Iniciar sesión</Link></li>
-<li><Link to="/registro">Registrarse</Link></li>
+    {/* Menú perfil */}
+    <li className="nav-item profile-menu">
+      <button
+        id="profile-btn"
+        className="nav-link"
+        title="Perfil"
+        onClick={toggleProfile}
+      >
+        <i className="fas fa-user"></i> <i className="fas fa-caret-down"></i>
+      </button>
+      <ul
+        id="profile-dropdown"
+        className={`dropdown-menu ${profileOpen ? "show" : ""}`}
+      >
+        <li><Link to="/login">Iniciar sesión</Link></li>
+        <li><Link to="/registro">Registrarse</Link></li>
             </ul>
           </li>
 

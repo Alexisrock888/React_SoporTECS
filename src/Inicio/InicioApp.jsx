@@ -6,7 +6,7 @@ const InicioApp = () => {
       <section className="intro-section">
         <div className="intro-content">
           <img
-            src="/img/STS.png"
+            src={`${process.env.PUBLIC_URL}/img/STS.png`}
             alt="Logo de SoporTECS"
             className="intro-image"
           />
