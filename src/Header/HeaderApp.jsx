@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import "../Styles/styles.css";
 import { Link } from "react-router-dom";
+import "../Styles/styles.css";
 
 const HeaderApp = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
   const toggleProfile = (e) => {
     e.stopPropagation();
     setProfileOpen(!profileOpen);
@@ -43,37 +44,50 @@ const HeaderApp = () => {
       </div>
 
       {/* Menú principal */}
-<nav className="navbar">
-  <ul id="nav-list" className={`nav-list ${menuOpen ? "show" : ""}`}>
-    <li>
-      <Link to="/" className="nav-link activo">Inicio</Link>
-    </li>
-    <li>
-      <Link to="/tienda" className="nav-link">Tienda de Software</Link>
-    </li>
-    <li>
-      <Link to="/soluciones" className="nav-link">Centro de Soluciones</Link>
-    </li>
-    <li>
-      <Link to="/marketplace" className="nav-link">Marketplace de Técnicos</Link>
-    </li>
+      <nav className="navbar">
+        <ul id="nav-list" className={`nav-list ${menuOpen ? "show" : ""}`}>
+          <li>
+            <Link to="/" className="nav-link activo">
+              Inicio
+            </Link>
+          </li>
+          <li>
+            <Link to="/tienda" className="nav-link">
+              Tienda de Software
+            </Link>
+          </li>
+          <li>
+            <Link to="/soluciones" className="nav-link">
+              Centro de Soluciones
+            </Link>
+          </li>
+          <li>
+            <Link to="/marketplace" className="nav-link">
+              Marketplace de Técnicos
+            </Link>
+          </li>
 
-    {/* Menú perfil */}
-    <li className="nav-item profile-menu">
-      <button
-        id="profile-btn"
-        className="nav-link"
-        title="Perfil"
-        onClick={toggleProfile}
-      >
-        <i className="fas fa-user"></i> <i className="fas fa-caret-down"></i>
-      </button>
-      <ul
-        id="profile-dropdown"
-        className={`dropdown-menu ${profileOpen ? "show" : ""}`}
-      >
-        <li><Link to="/login">Iniciar sesión</Link></li>
-        <li><Link to="/registro">Registrarse</Link></li>
+          {/* Menú perfil */}
+          <li className="nav-item profile-menu">
+            <button
+              id="profile-btn"
+              className="nav-link"
+              title="Perfil"
+              onClick={toggleProfile}
+            >
+              <i className="fas fa-user"></i>{" "}
+              <i className="fas fa-caret-down"></i>
+            </button>
+            <ul
+              id="profile-dropdown"
+              className={`dropdown-menu ${profileOpen ? "show" : ""}`}
+            >
+              <li>
+                <Link to="/login">Iniciar sesión</Link>
+              </li>
+              <li>
+                <Link to="/registro">Registrarse</Link>
+              </li>
             </ul>
           </li>
 
