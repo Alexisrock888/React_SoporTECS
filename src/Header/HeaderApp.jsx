@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import "../Styles/styles.css";
 
 const HeaderApp = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -32,6 +33,10 @@ const HeaderApp = () => {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
+  // 🔹 Detectar si estamos en login o registro
+  const isProfileActive =
+    location.pathname.includes("login") || location.pathname.includes("registro");
+
   return (
     <header>
       <div className="header-container">
@@ -46,39 +51,39 @@ const HeaderApp = () => {
       {/* Menú principal */}
       <nav className="navbar">
         <ul id="nav-list" className={`nav-list ${menuOpen ? "show" : ""}`}>
-<li>
-  <NavLink to="/" className="nav-link">
-    Inicio
-  </NavLink>
-</li>
-<li>
-  <NavLink to="/tienda" className="nav-link">
-    Tienda de Software
-  </NavLink>
-</li>
-<li>
-  <NavLink to="/soluciones" className="nav-link">
-    Centro de Soluciones
-  </NavLink>
-</li>
-<li>
-  <NavLink to="/marketplace" className="nav-link">
-    Marketplace de Técnicos
-  </NavLink>
-</li>
-
+          <li>
+            <NavLink to="/" className="nav-link">
+              Inicio
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/tienda" className="nav-link">
+              Tienda de Software
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/soluciones" className="nav-link">
+              Centro de Soluciones
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/marketplace" className="nav-link">
+              Marketplace de Técnicos
+            </NavLink>
+          </li>
 
           {/* Menú perfil */}
           <li className="nav-item profile-menu">
             <button
               id="profile-btn"
-              className="nav-link"
+              className={`nav-link ${isProfileActive ? "active" : ""}`} // 👈 Ahora dinámico
               title="Perfil"
               onClick={toggleProfile}
             >
               <i className="fas fa-user"></i>{" "}
               <i className="fas fa-caret-down"></i>
             </button>
+
             <ul
               id="profile-dropdown"
               className={`dropdown-menu ${profileOpen ? "show" : ""}`}

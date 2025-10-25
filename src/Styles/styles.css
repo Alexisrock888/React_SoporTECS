@@ -461,19 +461,19 @@
 }
 /* Estilo para el enlace en estado hover */
 .nav-list a:hover {
-  color: #ffcc00; /* Color dorado al pasar el mouse sobre el enlace */
+  color: #000000; /* Color dorado al pasar el mouse sobre el enlace */
   text-decoration: none; /* Opcional: elimina el subrayado */
 }
 
 /* Estilo para el enlace en estado activo */
 .nav-link.activo {
-  color: gold; /* Color dorado cuando el enlace está activo */
+  color: rgb(0, 0, 0); /* Color dorado cuando el enlace está activo */
   font-weight: bold; /* Texto en negrita cuando el enlace está activo */
 }
 
 /* Estilo para mantener el color dorado incluso después de hacer clic, si es necesario */
 .nav-list a:active {
-  color: #ffcc00; /* El color dorado al hacer clic */
+  color: #000000; /* El color dorado al hacer clic */
 }
 /* Contenedor del botón de perfil */
 .profile-item {
@@ -498,7 +498,7 @@
 
 #profile-btn:hover,
 #profile-btn:focus {
-  color: #ffcc00;
+  color: #000000;
 }
 
 /* Menú desplegable */
@@ -521,9 +521,9 @@
   text-decoration: none;
 }
 
-.dropdown-menu li a:hover {
+.dropdown-menu li a:hover { /*Esto es para el hover del menu desplegable en en color ejemplo rojo*/
   background-color: #333;
-  color: #ffcc00;
+  color: #000000;
 }
 .dropdown-menu.show {
   display: block;
@@ -594,24 +594,97 @@ footer {
   padding: 15px 0;
   font-size: 0.9rem;
 }
-/* ===== NAVEGACIÓN ===== */
+/* ============================================
+   NUEVO ESTILO NAVBAR - EFECTO SUBRAYADO MODERNO
+============================================ */
 .nav-link {
+  position: relative;
   color: white;
   text-decoration: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Efecto al pasar el mouse */
-.nav-link:hover {
-  background-color: #f1c40f;
-  color: #002b66;
-}
-
-/* 🔹 Enlace activo (ruta actual) */
-.nav-link.active {
-  background-color: #f1c40f;
-  color: #002b66;
   font-weight: bold;
+  padding: 8px 15px;
+  transition: color 0.3s ease;
+}
+
+/* Subrayado animado */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: #f1c40f; /* amarillo */
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+/* Hover: aparece línea y cambia color texto */
+.nav-link:hover {
+  color: #f1c40f;
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* Enlace activo (página actual) */
+.nav-link.active {
+  color: #f1c40f;
+}
+
+.nav-link.active::after {
+  width: 80%;
+}
+
+/* ===== PERFIL (MISMO EFECTO SUBRAYADO) ===== */
+#profile-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 15px;
+  transition: color 0.3s ease;
+}
+
+/* Línea amarilla animada igual que los demás enlaces */
+#profile-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: #f1c40f;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+/* Hover */
+#profile-btn:hover {
+  color: #f1c40f;
+}
+
+#profile-btn:hover::after {
+  width: 80%;
+}
+/* ===== PERFIL (ICONO ACTIVO Y HOVER) ===== */
+
+/* Icono dentro del botón de perfil */
+#profile-btn i {
+  transition: color 0.3s ease;
+}
+
+/* Hover: el texto y el icono se ponen amarillos */
+#profile-btn:hover,
+#profile-btn:hover i {
+  color: #f1c40f;
+}
+
+/* Activo: mantiene el estilo amarillo + línea */
+#profile-btn.active,
+#profile-btn.active i {
+  color: #f1c40f;
 }
