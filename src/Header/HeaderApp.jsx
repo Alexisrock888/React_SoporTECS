@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "../Styles/styles.css";
 
 const HeaderApp = () => {
@@ -46,26 +46,27 @@ const HeaderApp = () => {
       {/* Menú principal */}
       <nav className="navbar">
         <ul id="nav-list" className={`nav-list ${menuOpen ? "show" : ""}`}>
-          <li>
-            <Link to="/" className="nav-link activo">
-              Inicio
-            </Link>
-          </li>
-          <li>
-            <Link to="/tienda" className="nav-link">
-              Tienda de Software
-            </Link>
-          </li>
-          <li>
-            <Link to="/soluciones" className="nav-link">
-              Centro de Soluciones
-            </Link>
-          </li>
-          <li>
-            <Link to="/marketplace" className="nav-link">
-              Marketplace de Técnicos
-            </Link>
-          </li>
+<li>
+  <NavLink to="/" className="nav-link">
+    Inicio
+  </NavLink>
+</li>
+<li>
+  <NavLink to="/tienda" className="nav-link">
+    Tienda de Software
+  </NavLink>
+</li>
+<li>
+  <NavLink to="/soluciones" className="nav-link">
+    Centro de Soluciones
+  </NavLink>
+</li>
+<li>
+  <NavLink to="/marketplace" className="nav-link">
+    Marketplace de Técnicos
+  </NavLink>
+</li>
+
 
           {/* Menú perfil */}
           <li className="nav-item profile-menu">
