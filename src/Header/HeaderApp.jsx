@@ -33,14 +33,16 @@ const HeaderApp = () => {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
-  // 🔹 Detectar si estamos en login o registro
+  //Detectar si estamos en login o registro
   const isProfileActive =
     location.pathname.includes("login") || location.pathname.includes("registro");
 
   return (
-    <header>
-      <div className="header-container">
-        <h1 className="header-title">SoporTECS</h1>
+<header>
+  <div className="header-container">
+    <Link to="/" className="header-title-link" onClick={() => setMenuOpen(false)}>
+      <h1 className="header-title">SoporTECS</h1>
+    </Link>
 
         {/* Botón menú hamburguesa */}
         <button id="menu-toggle" className="menu-toggle" onClick={toggleMenu}>
@@ -52,59 +54,80 @@ const HeaderApp = () => {
       <nav className="navbar">
         <ul id="nav-list" className={`nav-list ${menuOpen ? "show" : ""}`}>
           <li>
-            <NavLink to="/" className="nav-link">
+            <NavLink to="/" className="nav-link" onClick={() => setMenuOpen(false)}>
               Inicio
             </NavLink>
           </li>
           <li>
-            <NavLink to="/tienda" className="nav-link">
+            <NavLink to="/tienda" className="nav-link" onClick={() => setMenuOpen(false)}>
               Tienda de Software
             </NavLink>
           </li>
           <li>
-            <NavLink to="/soluciones" className="nav-link">
+            <NavLink to="/soluciones" className="nav-link" onClick={() => setMenuOpen(false)}>
               Centro de Soluciones
             </NavLink>
           </li>
           <li>
-            <NavLink to="/marketplace" className="nav-link">
+            <NavLink to="/marketplace" className="nav-link" onClick={() => setMenuOpen(false)}>
               Marketplace de Técnicos
             </NavLink>
           </li>
+{/* Menú perfil */}
+<li className="nav-item profile-menu">
+  <button
+    id="profile-btn"
+    className={`nav-link ${isProfileActive ? "active" : ""}`} 
+    title="Perfil"
+    onClick={toggleProfile}
+  >
+    <i className="fas fa-user"></i>{" "}
+    <i className="fas fa-caret-down"></i>
+  </button>
 
-          {/* Menú perfil */}
-          <li className="nav-item profile-menu">
-            <button
-              id="profile-btn"
-              className={`nav-link ${isProfileActive ? "active" : ""}`} // 👈 Ahora dinámico
-              title="Perfil"
-              onClick={toggleProfile}
-            >
-              <i className="fas fa-user"></i>{" "}
-              <i className="fas fa-caret-down"></i>
-            </button>
+  <ul
+    id="profile-dropdown"
+    className={`dropdown-menu ${profileOpen ? "show" : ""}`}
+  >
+    <li>
+      <Link
+        to="/login"
+        onClick={() => {
+          setProfileOpen(false);
+          setMenuOpen(false);
+        }}
+      >
+        Iniciar sesión
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/registro"
+        onClick={() => {
+          setProfileOpen(false);
+          setMenuOpen(false);
+        }}
+      >
+        Registrarse
+      </Link>
+    </li>
+  </ul>
+</li>
 
-            <ul
-              id="profile-dropdown"
-              className={`dropdown-menu ${profileOpen ? "show" : ""}`}
-            >
-              <li>
-                <Link to="/login">Iniciar sesión</Link>
-              </li>
-              <li>
-                <Link to="/registro">Registrarse</Link>
-              </li>
-            </ul>
-          </li>
-
-          {/* Selector de idioma */}
-          <li className="idioma-dropdown">
-            <select id="language-selector">
-              <option value="es">🇪🇸 ES</option>
-              <option value="en">🇺🇸 EN</option>
-              <option value="pt">🇧🇷 PT</option>
-            </select>
-          </li>
+{/* Selector de idioma */}
+<li className="idioma-dropdown">
+  <select
+    id="language-selector"
+    onChange={() => {
+      setMenuOpen(false);
+      setProfileOpen(false);
+    }}
+  >
+    <option value="es">🇪🇸 ES</option>
+    <option value="en">🇺🇸 EN</option>
+    <option value="pt">🇧🇷 PT</option>
+  </select>
+</li>
         </ul>
       </nav>
     </header>

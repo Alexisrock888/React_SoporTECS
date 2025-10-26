@@ -31,10 +31,23 @@
     justify-content: space-between;
     align-items: center;
   }  
-  
+  /* ===== ESTILO DEL TÍTULO SOPORTECS ===== */
 .header-title {
   font-size: 2rem;
   font-weight: bold;
+  color: white;               /* Color original */
+  margin: 0;
+  transition: color 0.3s ease; /* Suaviza el cambio al pasar el mouse */
+}
+
+.header-title-link {
+  text-decoration: none;       /* Quita subrayado */
+  color: inherit;              /* Mantiene color original */
+  transition: color 0.3s ease; /* Suaviza el cambio de color */
+}
+
+.header-title-link:hover .header-title {
+  color: #FFD700; /* Amarillo brillante al pasar el mouse */
 }
   
   .navbar {
@@ -69,7 +82,7 @@
     cursor: pointer;
     position: absolute;
     right: 20px;
-    top: 18px;
+    top: 8px;
     z-index: 20;
   }
   
