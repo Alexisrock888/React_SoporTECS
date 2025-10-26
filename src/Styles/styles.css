@@ -82,38 +82,71 @@
     cursor: pointer;
     position: absolute;
     right: 20px;
-    top: 8px;
+    top: 9px;
     z-index: 20;
   }
   
   /* Estilos responsive para móviles */
   @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-  
-    .nav-list {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: #002b5c;
-        width: 100%;
-        padding: 15px 0;
-        position: absolute;
-        top: 100%; /* justo debajo del header */
-        left: 0;
-        z-index: 999;
-      }
-  
-      .nav-list.show {
-        display: flex;
-      }
-  
-      .nav-list li {
-        margin: 10px 0;
-      }
+  .menu-toggle {
+    display: block;
   }
-  
+
+  /* Contenedor del menú móvil */
+.nav-list {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 43, 92, 0.83); /* azul #002b5c con transparencia */
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  border-top: 4px solid white;
+  backdrop-filter: blur(3px);
+}
+
+.nav-list.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  /* Separación entre los enlaces del menú */
+  .nav-list li {
+    margin: 10px 0;
+  }
+
+  /* Agrupa perfil + idioma en una sola línea */
+  .profile-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* espacio entre el icono de perfil y el idioma */
+  }
+
+  .idioma-dropdown {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  #language-selector {
+    padding: 3px 8px;
+    border-radius: 5px;
+    border: none;
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+}
+
   main {
     flex: 1;
     padding: 40px 20px;
