@@ -15,23 +15,25 @@ const HeaderApp = () => {
   };
 
   // Cierra el menú de perfil si se hace clic fuera
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      const dropdown = document.getElementById("profile-dropdown");
-      const btn = document.getElementById("profile-btn");
-      if (
-        dropdown &&
-        btn &&
-        !dropdown.contains(event.target) &&
-        !btn.contains(event.target)
-      ) {
-        setProfileOpen(false);
-      }
-    };
+useEffect(() => {
+  const handleOutsideClick = (event) => {
+    const navList = document.getElementById("nav-list");
+    const toggleBtn = document.getElementById("menu-toggle");
 
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
+    // Si el menú está abierto y el clic fue fuera del menú y del botón
+    if (
+      menuOpen &&
+      navList &&
+      !navList.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      setMenuOpen(false);
+    }
+  };
+
+  document.addEventListener("click", handleOutsideClick);
+  return () => document.removeEventListener("click", handleOutsideClick);
+}, [menuOpen]);
 
   //Detectar si estamos en login o registro
   const isProfileActive =
