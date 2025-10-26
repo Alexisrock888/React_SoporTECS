@@ -97,7 +97,7 @@
   display: none;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 43, 92, 0.83); /* azul #002b5c con transparencia */
+  background-color: rgba(0, 43, 92, 0.85); /* azul #002b5c con transparencia */
   width: 100%;
   padding: 20px 0;
   position: absolute;
