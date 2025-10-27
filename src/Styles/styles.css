@@ -507,7 +507,7 @@
 }
 /* Estilo para el enlace en estado hover */
 .nav-list a:hover {
-  color: #000000; /* Color dorado al pasar el mouse sobre el enlace */
+  color: #ffffff; /* Color dorado al pasar el mouse sobre el enlace */
   text-decoration: none; /* Opcional: elimina el subrayado */
 }
 
