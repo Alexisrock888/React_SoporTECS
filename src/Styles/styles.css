@@ -47,7 +47,7 @@
 }
 
 .header-title-link:hover .header-title {
-  color: #FFD700; /* Amarillo brillante al pasar el mouse */
+  color: #38B6FF; /* Amarillo brillante al pasar el mouse */
 }
   
   .navbar {
@@ -660,14 +660,14 @@ footer {
   left: 50%;
   width: 0%;
   height: 2px;
-  background-color: #f1c40f; /* amarillo */
+  background-color: #38B6FF; /* amarillo */
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
 
 /* Hover: aparece línea y cambia color texto */
 .nav-link:hover {
-  color: #f1c40f;
+  color: #38B6FF;
 }
 
 .nav-link:hover::after {
@@ -676,7 +676,7 @@ footer {
 
 /* Enlace activo (página actual) */
 .nav-link.active {
-  color: #f1c40f;
+  color: #38B6FF;
 }
 
 .nav-link.active::after {
@@ -703,14 +703,14 @@ footer {
   left: 50%;
   width: 0%;
   height: 2px;
-  background-color: #f1c40f;
+  background-color: #38B6FF;
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
 
 /* Hover */
 #profile-btn:hover {
-  color: #f1c40f;
+  color: #38B6FF;
 }
 
 #profile-btn:hover::after {
@@ -726,11 +726,11 @@ footer {
 /* Hover: el texto y el icono se ponen amarillos */
 #profile-btn:hover,
 #profile-btn:hover i {
-  color: #f1c40f;
+  color: #38B6FF;
 }
 
 /* Activo: mantiene el estilo amarillo + línea */
 #profile-btn.active,
 #profile-btn.active i {
-  color: #f1c40f;
+  color: #38B6FF;
 }
