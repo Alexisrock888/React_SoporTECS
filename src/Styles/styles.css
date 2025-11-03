@@ -752,8 +752,10 @@ footer {
 }
 
 .intro-content p {
-  margin-top: 60px;
+  position: relative;
+  z-index: 1;
   font-size: 1.1rem;
   line-height: 1.6;
   color: #030303;
+  margin-top: 0;
 }
